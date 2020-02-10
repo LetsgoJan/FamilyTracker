@@ -1,4 +1,4 @@
-package com.example.myapplication.data.model;
+package com.example.familytracker.Model;
 
 import java.util.Date;
 

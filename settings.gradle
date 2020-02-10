@@ -1,2 +1,2 @@
-include ':app', ':Model', ':model2'
-rootProject.name='My Application'
+include ':app'
+rootProject.name='FamilyTracker'

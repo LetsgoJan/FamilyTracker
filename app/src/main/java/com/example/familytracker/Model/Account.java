@@ -1,32 +1,34 @@
-package com.example.myapplication.data.model;
+package com.example.familytracker.Model;
 
 import java.util.List;
 
 public class Account {
-    private String Username;
-    private String Password;
+    private String username;
+    private String password;
+    private String adminEmail;
     private List<Member> members; //kan wss weg omdat je members altijd via controller aanvraag
     private int id;
 
-    public Account(String username, String password) {
-        Username = username;
-        Password = password;
+    public Account(String username, String password, String adminEmail) {
+        this.username = username;
+        this.password = password;
+        this.adminEmail = adminEmail;
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
     public void setUsername(String username) {
-        Username = username;
+        this.username = username;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public List<Member> getMembers() {
@@ -44,4 +46,8 @@ public class Account {
     public void setId(int id){
         this.id = id;
     }
+
+    public String getAdminEmail(){return adminEmail;}
+
+    public void setAdminEmail(String email){adminEmail = email;}
 }
