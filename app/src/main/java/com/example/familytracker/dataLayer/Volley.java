@@ -71,10 +71,26 @@ public class Volley {
     }
 
     public void sendRequest(JsonObjectRequest jsObjRequest){
-
-
-
         this.requestQueue.add(jsObjRequest);
+    }
 
+    public JSONObject getParams(String stringRequest){
+
+        JSONObject params = new JSONObject();
+
+        try{
+            JSONObject statement = new JSONObject();
+            statement.put("statement",stringRequest );
+
+            JSONArray jsonArrayStatments = new JSONArray();
+            jsonArrayStatments.put(0,statement);
+
+            params.put("statements", jsonArrayStatments);
+
+        } catch (Exception e) {
+            Log.d("request builder error", e.getMessage());
+        }
+
+        return params;
     }
 }
