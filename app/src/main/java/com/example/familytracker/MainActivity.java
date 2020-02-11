@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onLogin(Boolean succes){
         if (succes){
-            ArrayList<Member> members = new ArrayList<Member>();
-            startActivity(new Intent(this, MemberListAcitvity.class).putExtra("members", members));
+            Account account = new Account("","","");
+            startActivity(new Intent(this, MemberListAcitvity.class).putExtra("account", account));
         }
     }
 }
