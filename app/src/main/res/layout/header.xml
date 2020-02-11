@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_alignBaseline="@id/toolbar"
+        android:layout_alignStart="@id/toolbar"
+        android:layout_alignLeft="@id/toolbar"
+        android:layout_alignTop="@id/toolbar"
+        android:layout_alignEnd="@id/toolbar"
+        android:layout_alignRight="@id/toolbar"
+        android:layout_alignBottom="@id/toolbar"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="true"
+        android:layout_toStartOf="@id/toolbar"
+        android:layout_toLeftOf="@id/toolbar"
+        android:layout_toEndOf="@id/toolbar"
+        android:layout_toRightOf="@id/toolbar"
+        android:fontFamily="sans-serif-black"
+        android:text="Family Tracker ©"
+        android:textAlignment="center"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="20sp" />
+
+</RelativeLayout>

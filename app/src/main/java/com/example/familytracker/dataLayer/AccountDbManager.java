@@ -61,6 +61,7 @@ public class AccountDbManager {
                                 mainActivity.onLogin(true);
                             } else{
                                 mainActivity.onLogin(false);
+                                // TODO:: Error handling maken.
                             }
 
                         } catch (Exception ex) {
