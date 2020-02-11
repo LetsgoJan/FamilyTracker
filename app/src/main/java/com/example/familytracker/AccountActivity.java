@@ -1,5 +1,6 @@
 package com.example.familytracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -30,7 +31,6 @@ public class AccountActivity extends AppCompatActivity implements MyEventListene
         setContentView(R.layout.activity_account);
 
         accountManager = new AccountManager(new AccountDbManager(this.getApplicationContext()));
-        final Volley volley = Volley.getInstance(this.getApplicationContext());
 
         addButton = (Button) findViewById(R.id.bt_account_create_account) ;
         usernameField = (EditText) findViewById(R.id.et_account_familyname);
@@ -42,33 +42,20 @@ public class AccountActivity extends AppCompatActivity implements MyEventListene
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Account account = new Account(usernameField.getText().toString(), passwordField.getText().toString(), adminEmailField.getText().toString());
-//                accountManager.CreateAccount(account);
-
-                volley.sendRequest("");
+                Account account = new Account(usernameField.getText().toString(), passwordField.getText().toString(), adminEmailField.getText().toString());
+                accountManager.CreateAccount(account, AccountActivity.this);
             }
         });
 
-        usernameField.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
+    }
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(passwordField.getText() != passwordFieldConfirm.getText()){
-                    passwordFieldConfirm.setBackgroundColor(4);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if(passwordField.getText() != passwordFieldConfirm.getText()){
-                    passwordFieldConfirm.setBackgroundColor(4);
-                }
-            }
-        });
+    public void onAccountCreated(boolean succes){
+        if(succes){
+            startActivity(new Intent(this, MemberListAcitvity.class));
+        } else {
+            startActivity(new Intent(this, MainActivity.class));
+        }
     }
 
     @Override
